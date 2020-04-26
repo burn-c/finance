@@ -30,12 +30,6 @@ interface Balance {
   total: string;
 }
 
-interface BalanceApi {
-  income: number;
-  outcome: number;
-  total: number;
-}
-
 const Dashboard: React.FC = () => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [balance, setBalance] = useState<Balance>({} as Balance);
@@ -63,13 +57,6 @@ const Dashboard: React.FC = () => {
         outcome: formatValue(getBalance.outcome),
         total: formatValue(getBalance.total),
       };
-
-      console.log(formattedBalance);
-      // getBalance.map((item: BalanceApi) => ({
-      //   income: formatValue(item.income),
-      //   outcome: formatValue(item.income),
-      //   total: formatValue(item.income),
-      // }));
 
       setBalance(formattedBalance);
     }
